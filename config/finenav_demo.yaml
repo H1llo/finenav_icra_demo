@@ -1,0 +1,37 @@
+/finenav_demo:
+  ros__parameters:
+    use_sim_time: false
+
+/finenav_demo/finenav_navigator:
+  ros__parameters:
+    plugins: ["finenav_demo/lib/finenav_demo"]
+    behavior_trees: ["finenav_demo/behavior_trees"]
+    tick_frequency: 50
+
+/finenav_demo/finenav_localizer:
+  ros__parameters:
+    pose_topic: "/localization_pose"
+    pose_smoothing_time: 0.0
+    initial_pose_topic: ""
+    odom_topic: ""
+    twist_topic: ""
+    force_2d_mode: false
+    publish_tf: false
+
+/finenav_demo/ndt_hierarchical_map:
+  ros__parameters:
+    ndt_hierarchical_map:
+      map_file: "$(var map_file)"
+      local_resolution: $(var map_resolution)
+      expected_update_rate_hz: 0.0
+
+/finenav_demo/global_planner:
+  ros__parameters:
+    tomography_ndt_view:
+      resolution: 0.05  # 5 cm planning grid.
+      ground_h: -1.0  # Set below the lowest terrain surface in the map.
+      slice_dh: 0.8
+    pct_planner:
+      max_expansions: 200000
+      time_budget_ms: 1000.0
+      publish_path: false

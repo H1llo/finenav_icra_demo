@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>finenav_demo</name>
+  <version>0.1.0</version>
+  <description>Offline NDT map to three-dimensional global path using FineNav-Engine.</description>
+  <maintainer email="jinboliu@example.com">Jinbo Liu</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <depend>rclcpp</depend>
+  <depend>nav_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>behaviortree_cpp</depend>
+  <depend>finenav_engine_cpp</depend>
+  <depend>finenav_navigator</depend>
+  <depend>finenav_interfaces</depend>
+  <exec_depend>finenav_ndt_hierarchical_map</exec_depend>
+  <exec_depend>finenav_tomography_planner</exec_depend>
+  <exec_depend>tomography_ndt_view</exec_depend>
+  <exec_depend>ament_index_python</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+
+  <test_depend>ament_cmake_test</test_depend>
+  <test_depend>finenav_ndt_octomap</test_depend>
+  <test_depend>rclpy</test_depend>
+  <test_depend>action_msgs</test_depend>
+  <export><build_type>ament_cmake</build_type></export>
+</package>
